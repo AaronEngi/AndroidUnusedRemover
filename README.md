@@ -1,6 +1,10 @@
 # AndroidUnusedRemover
 用java代码实现的移除未使用资源。
 
+功能：
+1. 删除多余的layout、drawable等文件
+2. 删除多余的color、string等（删除一行）。
+
 1. 运行lint，例如：androidstudio的lint
 2. 修改LintParser类的属性。
 private static String mLintResult = "F:/trunk1030/CSmall/build/outputs/lint-results-devDebug.xml";

@@ -61,6 +61,16 @@ public class UnusedRemover {
 
 		List<ItemUnused> list = new LintParser().parse();
 		for (ItemUnused issueUnused : list) {
+			//lint的检测有问题
+			//mob组件估计不常规
+			//mob分享组件的东西不能删除
+			//http://www.mob.com/
+			if(issueUnused.location.contains("ssdk_")){
+				System.out.println("not removed:" + issueUnused.location);
+				continue;
+			}
+			
+			
 			switch (issueUnused.type) {
 			case ItemUnused.TYPE_FILE:
 				// layout 文件等
